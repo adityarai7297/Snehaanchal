@@ -1,0 +1,59 @@
+{
+  "project_info": {
+    "project_number": "432854889453",
+    "firebase_url": "https://snehaanchal-4bf01.firebaseio.com",
+    "project_id": "snehaanchal-4bf01",
+    "storage_bucket": "snehaanchal-4bf01.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:432854889453:android:2fdbcabab7e7622d",
+        "android_client_info": {
+          "package_name": "org.snehaanchal.snehaanchal"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "432854889453-1q4qtlu5vq67fivb3os9ng2hdthal292.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "org.snehaanchal.snehaanchal",
+            "certificate_hash": "870856e2b24a63c97dcf5ca380e0691e638e6ef8"
+          }
+        },
+        {
+          "client_id": "432854889453-ir0tvf3kaliq32cptkdk5u5i6a2endjg.apps.googleusercontent.com",
+          "client_type": 3
+        },
+        {
+          "client_id": "432854889453-ir0tvf3kaliq32cptkdk5u5i6a2endjg.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA9EhrSzN9EXbBPO4LSHRcadihgFeFTYQw"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "432854889453-ir0tvf3kaliq32cptkdk5u5i6a2endjg.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

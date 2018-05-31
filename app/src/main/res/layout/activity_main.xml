@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/linearLayout2"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/aqua_blue_gradient_background">
+
+    <!--<ImageView android:src="@drawable/logo"-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="72dp"-->
+    <!--android:layout_marginBottom="24dp"-->
+    <!--android:layout_gravity="center_horizontal" />-->
+
+
+    <Button
+        android:id="@+id/button3"
+        style="@style/Widget.AppCompat.Button.Borderless.Colored"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/input_email"
+        android:layout_alignRight="@+id/input_email"
+        android:layout_alignTop="@+id/button4"
+        android:onClick="Register"
+        android:text="Register"
+        android:textAllCaps="false"
+        android:textColor="@color/common_google_signin_btn_text_dark_default"
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/button4"
+        style="@style/Widget.AppCompat.Button.Borderless.Colored"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignStart="@+id/input_email"
+        android:layout_marginBottom="35dp"
+        android:onClick="Login"
+        android:text="Login"
+        android:textAllCaps="false"
+        android:textColor="@color/common_google_signin_btn_text_dark_default"
+        android:textStyle="bold" />
+
+    <EditText
+        android:id="@+id/input_email"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="183dp"
+        android:backgroundTint="@color/common_google_signin_btn_text_dark_default"
+        android:ems="10"
+        android:gravity="center"
+        android:hint="Enter Email Address"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:inputType="textPersonName"
+        android:textColor="@color/common_google_signin_btn_text_dark_default"
+        android:textColorHint="@color/common_google_signin_btn_text_dark_default" />
+
+    <EditText
+        android:id="@+id/input_password"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="116dp"
+        android:backgroundTint="@color/common_google_signin_btn_text_dark_default"
+        android:ems="10"
+        android:gravity="center"
+        android:hint="Password (Atleast 6 Characters)"
+        android:inputType="textPersonName"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:textColor="@color/common_google_signin_btn_text_dark_default"
+        android:textColorHint="@color/common_google_signin_btn_text_dark_default" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="275dp"
+        android:layout_height="211dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="43dp"
+        android:layout_marginTop="44dp"
+        android:adjustViewBounds="true"
+        android:cropToPadding="true"
+        app:srcCompat="@drawable/snehaanchal_background" />
+
+</RelativeLayout>
