@@ -1,96 +1,290 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".addPatient">
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:scrollbars="vertical">
 
-    <EditText
-        android:id="@+id/name"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="46dp"
-        android:ems="10"
-        android:hint="Name"
-        android:inputType="textPersonName" />
-
-    <EditText
-        android:id="@+id/age"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="124dp"
-        android:ems="10"
-        android:hint="Age"
-        android:inputType="textPersonName" />
-
-    <RadioGroup
-        android:id="@+id/radiogroup"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginBottom="171dp"
-        android:orientation="horizontal">
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
-        <RadioButton
-            android:id="@+id/hc"
-            android:layout_width="10dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="HC"
-            android:textAlignment="center" />
+        <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            xmlns:tools="http://schemas.android.com/tools"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/aqua_blue_gradient_background"
+            tools:context=".addPatient">
 
-        <RadioButton
-            android:id="@+id/opd"
-            android:layout_width="45dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="OPD"
-            android:textAlignment="center" />
+            <LinearLayout
+                android:id="@+id/linear_department"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@id/linear_gender"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal">
 
-        <RadioButton
-            android:id="@+id/ipd"
-            android:layout_width="14dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="IPD"
-            android:textAlignment="center" />
-    </RadioGroup>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="2dp"
+                    android:text="Department :"
+                    android:textColor="@color/common_google_signin_btn_text_dark_default"
+                    android:textSize="18dp" />
 
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="149dp"
-        android:layout_height="39dp"
-        android:layout_above="@+id/radiogroup"
-        android:layout_centerHorizontal="true"
-        android:text="Department"
-        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
-        android:textSize="18sp" />
 
-    <Button
-        android:id="@+id/button2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="76dp"
-        android:onClick="submit"
-        android:text="Submit"
-        android:textAllCaps="false" />
+                <RadioGroup
+                    android:id="@+id/radiogroup"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true"
+                    android:layout_below="@+id/aadhar"
+                    android:orientation="horizontal"
+                    tools:ignore="UnknownId">
 
-    <EditText
-        android:id="@+id/phone"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="195dp"
-        android:ems="10"
-        android:hint="Phone Number"
-        android:inputType="phone" />
-</RelativeLayout>
+                    <RadioButton
+                        android:id="@+id/hc"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:buttonTint="@color/common_google_signin_btn_text_dark_default"
+                        android:checked="false"
+                        android:text="HC"
+
+                        android:textColor="@color/common_google_signin_btn_text_dark_default" />
+
+                    <RadioButton
+                        android:id="@+id/opd"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:buttonTint="@color/common_google_signin_btn_text_dark_default"
+                        android:text="OPD"
+                        android:textColor="@color/common_google_signin_btn_text_dark_default" />
+
+                    <RadioButton
+                        android:id="@+id/ipd"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:buttonTint="@color/common_google_signin_btn_text_dark_default"
+                        android:text="IPD"
+                        android:textColor="@color/common_google_signin_btn_text_dark_default" />
+                </RadioGroup>
+            </LinearLayout>
+
+            <EditText
+                android:id="@+id/name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="46dp"
+                android:backgroundTint="@color/common_google_signin_btn_text_dark_default"
+                android:ems="10"
+                android:hint="Name"
+                android:inputType="textPersonName"
+                android:textColor="@color/common_google_signin_btn_text_dark_default"
+                android:textColorHint="@color/common_google_signin_btn_text_dark_default" />
+
+            <EditText
+                android:id="@+id/age"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/date_of_birth"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="5dp"
+                android:backgroundTint="@color/common_google_signin_btn_text_dark_default"
+                android:ems="10"
+                android:hint="Age"
+                android:inputType="number"
+                android:textColor="@color/common_google_signin_btn_text_dark_default"
+                android:textColorHint="@color/common_google_signin_btn_text_dark_default" />
+
+            <LinearLayout
+                android:id="@+id/linear_gender"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_below="@+id/caste"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/gender_select"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="2dp"
+                    android:text="Gender :"
+                    android:textColor="@color/common_google_signin_btn_text_dark_default"
+                    android:textSize="18dp" />
+
+
+                <RadioGroup
+                    android:id="@+id/gendergroup"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true"
+                    android:layout_below="@+id/linear_department"
+                    android:orientation="horizontal"
+                    tools:ignore="UnknownId">
+
+                    <RadioButton
+                        android:id="@+id/male"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:buttonTint="@color/common_google_signin_btn_text_dark_default"
+                        android:checked="false"
+                        android:text="Male"
+
+                        android:textColor="@color/common_google_signin_btn_text_dark_default" />
+
+                    <RadioButton
+                        android:id="@+id/female"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:buttonTint="@color/common_google_signin_btn_text_dark_default"
+                        android:text="Female"
+                        android:textColor="@color/common_google_signin_btn_text_dark_default" />
+
+                    <RadioButton
+                        android:id="@+id/others"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:buttonTint="@color/common_google_signin_btn_text_dark_default"
+                        android:text="Other"
+                        android:textColor="@color/common_google_signin_btn_text_dark_default" />
+                </RadioGroup>
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/submit"
+                style="@style/Widget.AppCompat.Button.Borderless.Colored"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="66dp"
+                android:onClick="submit"
+                android:padding="15dp"
+                android:text="Submit"
+                android:textAllCaps="false"
+                android:textColor="@color/common_google_signin_btn_text_dark_default"
+                android:textSize="18sp" />
+
+            <EditText
+                android:id="@+id/phone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/age"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="5dp"
+                android:backgroundTint="@color/common_google_signin_btn_text_dark_default"
+                android:ems="10"
+                android:hint="Phone Number"
+                android:inputType="phone"
+                android:textColor="@color/common_google_signin_btn_text_dark_default"
+                android:textColorHint="@color/common_google_signin_btn_text_dark_default" />
+
+            <EditText
+                android:id="@+id/address"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/phone"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="5dp"
+                android:backgroundTint="@color/common_google_signin_btn_text_dark_default"
+                android:ems="10"
+                android:hint="Address"
+                android:inputType="textPostalAddress"
+                android:textColor="@color/common_google_signin_btn_text_dark_default"
+                android:textColorHint="@color/common_google_signin_btn_text_dark_default" />
+
+            <EditText
+                android:id="@+id/aadhar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/address"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="5dp"
+                android:backgroundTint="@color/common_google_signin_btn_text_dark_default"
+                android:ems="10"
+                android:hint="Aadhar Number"
+                android:inputType="number"
+                android:textColor="@color/common_google_signin_btn_text_dark_default"
+                android:textColorHint="@color/common_google_signin_btn_text_dark_default" />
+
+            <Button
+                android:id="@+id/button6"
+                style="@style/Widget.AppCompat.Button.Borderless"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/linear_department"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="10dp"
+                android:onClick="uploadImage"
+                android:text="Upload Image"
+                android:textAllCaps="false"
+                android:textColor="@color/common_google_signin_btn_text_dark_default"
+                android:textSize="18sp" />
+
+            <EditText
+                android:id="@+id/date_of_birth"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/name"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="5dp"
+                android:backgroundTint="@color/common_google_signin_btn_text_dark_default"
+                android:ems="10"
+                android:hint="Date Of Birth (dd/mm/yy)"
+                android:inputType="date"
+                android:textColor="@color/common_google_signin_btn_text_dark_default"
+                android:textColorHint="@color/common_google_signin_btn_text_dark_default" />
+
+            <EditText
+                android:id="@+id/religion"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/aadhar"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="5dp"
+                android:backgroundTint="@color/common_google_signin_btn_text_dark_default"
+                android:ems="10"
+                android:hint="Religion"
+                android:inputType="textPersonName"
+                android:textColor="@color/common_google_signin_btn_text_dark_default"
+                android:textColorHint="@color/common_google_signin_btn_text_dark_default" />
+
+            <EditText
+                android:id="@+id/caste"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/religion"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="5dp"
+                android:backgroundTint="@color/common_google_signin_btn_text_dark_default"
+                android:ems="10"
+                android:hint="Caste"
+                android:inputType="textPersonName"
+                android:textColor="@color/common_google_signin_btn_text_dark_default"
+                android:textColorHint="@color/common_google_signin_btn_text_dark_default" />
+
+        </RelativeLayout>
+
+
+    </LinearLayout>
+</ScrollView>

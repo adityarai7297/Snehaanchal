@@ -14,10 +14,14 @@ import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 public class Homepage extends AppCompatActivity {
 
     private FirebaseAuth mAuth;
+    private DatabaseReference mDatabase;
+    private DatabaseReference remove_patient;
     private Boolean exit;
     String patient_id;
 
@@ -25,6 +29,8 @@ public class Homepage extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_homepage);
+        mDatabase = FirebaseDatabase.getInstance().getReference();
+        remove_patient = mDatabase.child("Patients");
     }
 
     public void onStart() {
@@ -32,15 +38,8 @@ public class Homepage extends AppCompatActivity {
         exit = false;
         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
         if (user != null) {
-            // Name, email address, and profile photo Url
-            //String name = user.getDisplayName();
             String email = user.getEmail();
-            //Uri photoUrl = user.getPhotoUrl();
-            // Check if user's email is verified
             boolean emailVerified = user.isEmailVerified();
-            // The user's ID, unique to the Firebase project. Do NOT use this value to
-            // authenticate with your backend server, if you have one. Use
-            // FirebaseUser.getToken() instead.
             String uid = user.getUid();
         }
     }
@@ -62,15 +61,43 @@ public class Homepage extends AppCompatActivity {
 
     public void searchPatient(View v) {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        final EditText input = new EditText(this);
+        input.setInputType(InputType.TYPE_CLASS_TEXT | InputType.TYPE_CLASS_TEXT);
+        builder.setPositiveButton("Search By Name", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                searchByName();
+            }
+        });
+
+        builder.setNegativeButton("Search By ID", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                searchById();
+            }
+        });
+        builder.setNeutralButton("Cancel", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                dialog.cancel();
+            }
+        });
+        builder.show();
+    }
+
+    private void searchById() {
+        final AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setTitle("Enter Patient ID");
         final EditText input = new EditText(this);
         input.setInputType(InputType.TYPE_CLASS_TEXT | InputType.TYPE_CLASS_TEXT);
         builder.setView(input);
-        builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+        builder.setPositiveButton("Search", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 patient_id = input.getText().toString();
-                Toast.makeText(getApplicationContext(), patient_id, Toast.LENGTH_SHORT).show();
+                Intent searchPatientById = new Intent(getApplicationContext(), UserProfile.class);
+                searchPatientById.putExtra("ID", patient_id);
+                startActivity(searchPatientById);
             }
         });
         builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
@@ -80,6 +107,10 @@ public class Homepage extends AppCompatActivity {
             }
         });
         builder.show();
+
+    }
+
+    private void searchByName() {
     }
 
 
@@ -111,12 +142,13 @@ public class Homepage extends AppCompatActivity {
     }
 
     private void confirmDelete(EditText input) {
-        patient_id = input.getText().toString();
+        patient_id = input.getText().toString().toUpperCase();
         AlertDialog.Builder remover = new AlertDialog.Builder(this);
         remover.setTitle("Confirm Deletion Of Patient ID " + patient_id);
         remover.setPositiveButton("OK", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
+                remove_patient.child(patient_id).removeValue();
                 Toast.makeText(getApplicationContext(), patient_id + "  removed", Toast.LENGTH_SHORT).show();
             }
         });

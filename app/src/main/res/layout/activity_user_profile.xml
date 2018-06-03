@@ -1,0 +1,275 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+
+    android:layout_height="match_parent"
+    android:background="@drawable/aqua_blue_gradient_background">
+
+    <RelativeLayout
+        android:id="@+id/layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <ImageView
+            android:id="@+id/header_cover_image"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:scaleType="centerCrop" />
+
+        <!--<de.hdodenhof.circleimageview.CircleImageView xmlns:app="http://schemas.android.com/apk/res-auto"-->
+
+        <!--android:id="@+id/profile"-->
+        <!--style="@style/Widget.AppCompat.Button.Borderless"-->
+        <!--android:layout_width="200dp"-->
+        <!--android:layout_height="200dp"-->
+        <!--android:layout_below="@+id/header_cover_image"-->
+        <!--android:layout_centerHorizontal="true"-->
+        <!--android:layout_marginTop="-130dp"-->
+        <!--android:padding="20dp"-->
+        <!--android:scaleType="centerCrop"/>-->
+
+        <RelativeLayout
+            android:id="@+id/profile_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/header_cover_image"
+            android:paddingBottom="24dp">
+
+
+            <TextView
+                android:id="@+id/name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="70dp"
+                android:text="NAME"
+                android:textColor="#fff"
+                android:textSize="24sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/department"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/patient_id"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="8dp"
+                android:text="DEPARTMENT"
+                android:textColor="#fff"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/patient_id"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/name"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="8dp"
+                android:text="ID"
+                android:textColor="#fff"
+                android:textSize="18sp" />
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/profile_layout"
+            android:layout_centerHorizontal="true"
+            android:layout_margin="5dp"
+            android:layout_marginTop="5dp"
+            android:background="#fff"
+            android:paddingBottom="20dp"
+            android:paddingLeft="5dp"
+            android:paddingRight="5dp"
+            android:paddingTop="5dp">
+
+            <TextView
+                android:id="@+id/t_date_of_reg"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:ems="8"
+                android:text="Registration Date: "
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/t_dob"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/t_date_of_reg"
+                android:layout_marginTop="5dp"
+                android:ems="8"
+                android:text="DOB: "
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/t_gender"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/t_age"
+                android:layout_marginTop="5dp"
+                android:ems="8"
+                android:text="Gender: "
+                android:textStyle="bold" />
+
+
+            <TextView
+                android:id="@+id/t_aadhar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/t_gender"
+                android:layout_marginTop="5dp"
+                android:ems="8"
+                android:text="Aadhar: "
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/t_phone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/t_aadhar"
+                android:layout_marginTop="5dp"
+                android:ems="8"
+                android:text="Phone: "
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/t_age"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/t_dob"
+                android:layout_marginTop="5dp"
+                android:ems="8"
+                android:text="Age: "
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/t_address"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/t_phone"
+                android:layout_marginTop="5dp"
+                android:ems="8"
+                android:text="Address: "
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/t_caste"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/address"
+                android:layout_marginTop="5dp"
+                android:ems="8"
+                android:text="Caste: "
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/t_religion"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/t_caste"
+                android:layout_marginTop="5dp"
+                android:ems="8"
+                android:text="Religion: "
+                android:textStyle="bold" />
+
+
+            <TextView
+                android:id="@+id/date_of_reg"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@+id/t_date_of_reg"
+                android:layout_toEndOf="@+id/t_date_of_reg"
+                android:layout_toRightOf="@+id/t_date_of_reg"
+                android:text="TextView"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/dob"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@+id/t_dob"
+                android:layout_toEndOf="@+id/t_dob"
+                android:layout_toRightOf="@+id/t_dob"
+                android:text="TextView"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/age"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@+id/t_age"
+                android:layout_toEndOf="@+id/t_age"
+                android:layout_toRightOf="@+id/t_age"
+                android:text="TextView"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/gender"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@+id/t_gender"
+                android:layout_toEndOf="@+id/t_gender"
+                android:layout_toRightOf="@+id/t_gender"
+                android:text="TextView"
+                android:textStyle="bold" />
+
+
+            <TextView
+                android:id="@+id/aadhar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@+id/t_aadhar"
+                android:layout_toEndOf="@+id/t_aadhar"
+                android:layout_toRightOf="@+id/t_aadhar"
+                android:text="TextView"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/phone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@+id/t_phone"
+                android:layout_toEndOf="@+id/t_phone"
+                android:layout_toRightOf="@+id/t_phone"
+                android:text="TextView"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/address"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@+id/t_address"
+                android:layout_toEndOf="@+id/t_address"
+                android:layout_toRightOf="@+id/t_address"
+                android:text="TextView"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/caste"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@+id/t_caste"
+                android:layout_toEndOf="@+id/t_caste"
+                android:layout_toRightOf="@+id/t_caste"
+                android:text="TextView"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/religion"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@+id/t_religion"
+                android:layout_toEndOf="@+id/t_religion"
+                android:layout_toRightOf="@+id/t_religion"
+                android:text="TextView"
+                android:textStyle="bold" />
+
+        </RelativeLayout>
+    </RelativeLayout>
+</ScrollView>

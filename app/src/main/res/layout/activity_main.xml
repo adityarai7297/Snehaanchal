@@ -41,7 +41,8 @@
         android:text="Login"
         android:textAllCaps="false"
         android:textColor="@color/common_google_signin_btn_text_dark_default"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        android:layout_alignLeft="@+id/input_email" />
 
     <EditText
         android:id="@+id/input_email"
@@ -52,10 +53,10 @@
         android:layout_marginBottom="183dp"
         android:backgroundTint="@color/common_google_signin_btn_text_dark_default"
         android:ems="10"
-        android:gravity="center"
-        android:hint="Enter Email Address"
         android:focusable="true"
         android:focusableInTouchMode="true"
+        android:gravity="center"
+        android:hint="Enter Email Address"
         android:inputType="textPersonName"
         android:textColor="@color/common_google_signin_btn_text_dark_default"
         android:textColorHint="@color/common_google_signin_btn_text_dark_default" />
@@ -69,11 +70,11 @@
         android:layout_marginBottom="116dp"
         android:backgroundTint="@color/common_google_signin_btn_text_dark_default"
         android:ems="10"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
         android:gravity="center"
         android:hint="Password (Atleast 6 Characters)"
         android:inputType="textPersonName"
-        android:focusable="true"
-        android:focusableInTouchMode="true"
         android:textColor="@color/common_google_signin_btn_text_dark_default"
         android:textColorHint="@color/common_google_signin_btn_text_dark_default" />
 
@@ -87,6 +88,8 @@
         android:layout_marginTop="44dp"
         android:adjustViewBounds="true"
         android:cropToPadding="true"
-        app:srcCompat="@drawable/snehaanchal_background" />
+        app:srcCompat="@drawable/snehaanchal_background"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="43dp" />
 
 </RelativeLayout>
